@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: #111111;
+    font: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+.mickey_header .mickey_header_div{
+    background: #0a0a0ae6;                           
+}
+.mickey_header .mickey_header_nav{
+    height: 88px;
+}
+.mickey_header .mickey_nav_div{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 768px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.mickey_header .mickey_nav_left{
+                 
+}
+
