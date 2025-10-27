@@ -7,32 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body> 
-    <header class="mickey_header">
-        <div class="mickey_header_div">
-            <nav class="mickey_header_nav">
-                <div class="mickey_nav_div">
-                    <div class="mickey_nav_left">
-                        <div class=" mickey_left_div">
-                            <img src="https://mks.blr1.cdn.digitaloceanspaces.com/uploads/2018/10/white.svg" alt="" class="mickey_left_img">
+    <header class="meckey_header">
+        <div class="meckey_header_div">
+            <nav class="meckey_header_nav">
+                <div class="meckey_nav_div">
+                    <div class="meckey_nav_left">
+                        <div class=" meckey_left_div">
+                            <img src="https://mks.blr1.cdn.digitaloceanspaces.com/uploads/2018/10/white.svg" alt="" class="meckey_left_img">
                         </div>
                     </div>
-                    <div class="mickey_nav_right">
-                        <div class="mickey_right_div">
-                            <div class="mickey_right_search">
-                                <img src="./img/mickey_search_white.svg" alt="" class="mickey_search_img">
+                    <div class="meckey_nav_right">
+                        <div class="meckey_right_div">
+                            <div class="meckey_right_search">
+                                <img src="./img/mickey_search_white.svg" alt="" class="meckey_search_img">
                             </div>
-                            <div class="mickey_right_login">
-                                <img src="./img/mickey_login_white.svg" alt="" class="mickey_login_img">
+                            <div class="meckey_right_login">
+                                <img src="./img/mickey_login_white.svg" alt="" class="meckey_login_img meckey_search_img">
                             </div>
-                            <div class="mickey_right_cart">
-                                <img src="./img/mickey_search_white.svg" alt="" class="mickey_cart_img">
+                            <div class="meckey_right_cart">
+                                <div class="meckey_cart_div">
+                                    <img src="./img/mickey_cart_white.svg" alt="" class="meckey_cart_img meckey_search_img">
+                                    <span class="meckey_cart_count">0</span>
+                                </div>
                             </div>
-                            <div class="mickey_right_burger">
-                                <button title="button" class="mickey_burger_button">
-                                    <span class="mickey_burger_span">
-                                        <span class="mickey_single_layer"></span>
-                                        <span class="mickey_single_layer"></span>
-                                        <span class="mickey_single_layer"></span>
+                            <div class="meckey_right_burger">
+                                <button title="button" class="meckey_burger_button">
+                                    <span class="meckey_burger_span">
+                                        <span class="meckey_single_layer"></span>
+                                        <span class="meckey_single_layer meckey_middle_layer"></span>
+                                        <span class="meckey_single_layer"></span>
                                     </span>
                                 </button>
                             </div>
@@ -42,6 +45,28 @@
             </nav>
         </div>
     </header>
+    <main>
+        <div class="meckey_main">
+            <div class="meckey_main_div">
+                <div class="meckey_product_path">
+                    <div class="meckey_path">
+                        <a href="" class="meckey_text meckey_home">Home</a>
+                        <span class=" meckey_slash">\</span>
+                        <a href="" class="meckey_text meckey_home">Shop</a>
+                        <span class=" meckey_slash">\</span>
+                        <a href="" class="meckey_text meckey_keyboard">Keyboard</a>
+                    </div>
+                    <p class="meckey_showing_result">Showing 1–12 of 157 results</p>
+                </div>
+                <div class="meckey_filter_option">
+                    <div class="meckey_filter_text">Price</div><!----><div class="meckey_filter_text">Brands</div><!----><div class="meckey_filter_text meckey_all_filter">All filters
+                        <img src="img/meckey_filter_black.svg" alt="" class="meckey_filter_logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="meckey_products"></ul>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

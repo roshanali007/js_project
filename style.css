@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -5,18 +6,38 @@
 }
 body{
     color: #111111;
-    font: 12px;
+    font-size: 12px;
     line-height: 12px;
     font-weight: 400;
-    overflow-x: hidden;
+    overflow-x: hidden;      
 }
-.mickey_header .mickey_header_div{
+@font-face {
+    font-family: font1;
+    src: url(fonts/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2);
+}
+@font-face {
+    font-family: font2;
+    src: url(fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: font3;
+    src: url(fonts/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2);
+}
+@font-face {
+    font-family: font4;
+    src: url(fonts/pxiEyp8kv8JHgFVrJJfecg.woff2);
+}
+@font-face {
+    font-family: font5;
+    src: url(fonts/WooCommerce.woff2);
+}
+.meckey_header .meckey_header_div{
     background: #0a0a0ae6;                           
 }
-.mickey_header .mickey_header_nav{
+.meckey_header .meckey_header_nav{
     height: 88px;
 }
-.mickey_header .mickey_nav_div{
+.meckey_header .meckey_nav_div{
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -24,7 +45,214 @@ body{
     display: grid;
     grid-template-columns: auto auto;
 }
-.mickey_header .mickey_nav_left{
-                 
+.meckey_header .meckey_nav_left{
+    display: flex;
+    align-items: center;
 }
-
+.meckey_header .meckey_left_div{
+    margin: 4px 0;
+    padding: 10px 0;
+}
+.meckey_header .meckey_left_img{
+    width: 120px;
+    max-width: 120px;
+    height: auto;
+}
+.meckey_header .meckey_nav_right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.meckey_header .meckey_right_div{
+    margin: 4px 0 6px;
+    display: flex;
+    align-items: center;
+}
+.meckey_header .meckey_right_search{
+    padding: 3px 3px 4px 3px;
+    display: flex;
+}
+.meckey_header .meckey_search_img{
+    width: 15px;
+    height: 15px;
+}
+.meckey_header .meckey_right_login{
+    display:  flex;
+    margin: 4px 0;
+    padding: 3px 3px 4px 3px;
+}
+.meckey_header .meckey_right_cart{
+    padding: 3px 3px 4px 3px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.meckey_header .meckey_cart_div{
+    margin: 4px 0;
+    height: 15px;
+}
+.meckey_header .meckey_cart_count{
+    background: #f4f5f7;
+    color: #111111;
+    position: absolute;
+    font-size: 7px;
+    padding: 3px;
+    bottom: 1px;
+    right: -10px;
+    font-weight: 600;
+    line-height:1;
+    border-radius: 3px;
+    font-family:Poppins,sans-serif;
+}
+.meckey_header .meckey_right_burger{
+    margin-left: 15px;
+}
+.meckey_header .meckey_burger_button{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #0a0a0ae6;
+    color: #ffffff;
+    border-style: solid;
+    border-color: #ffffff;
+    border-width: 1px;
+    
+}
+.meckey_header .meckey_single_layer{
+    display: block;
+    background-color: #ffffff;
+    width: 15px;
+    height: 2px;
+}
+.meckey_header .meckey_middle_layer{
+    margin: 3px 0;
+}
+.meckey_main{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 768px;
+    display: flex;
+}
+.meckey_main .meckey_main_div{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex-grow: 1;
+}
+.meckey_main .meckey_product_path{
+    margin-bottom: 19px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+.meckey_main .meckey_path{
+    margin: 0 0 13px;
+    height: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.meckey_main .meckey_home{
+    color: #333333;
+}
+.meckey_main .meckey_slash{
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+}
+.meckey_main .meckey_text{
+    font-size: 14px;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+    font-weight: 400;
+    line-height: 14px;
+    text-decoration: none;
+}
+.meckey_main .meckey_keyboard{
+    color: #111111;
+}
+.meckey_main .meckey_showing_result{
+    font-size: 14px;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+    line-height: 14px;
+    color: #111111;
+    font-weight: 400;
+}
+.meckey_main .meckey_filter_option{
+    padding: 10px 0 20px;
+}
+.meckey_main .meckey_filter_text{
+    display: inline-block;
+    margin-bottom: 8px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: inset 0 0 0 1px #363636;
+    font-size: 13.2px;
+    font-weight: 400;
+    line-height: 1.25em;
+    margin-right:8px;
+    padding: 8px 12px;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+}
+.meckey_main .meckey_filter_logo{
+    margin-bottom: -2px;
+    margin-left: 3px;
+    transform: scale(1.2);
+}
+.meckey_products{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    grid-gap: 40px 30px;
+    margin-bottom: 60px;
+    max-width: 100vw;
+}
+.meckey_products .meckey_product_div{
+    display: flex;
+    flex-direction: column;
+}
+.meckey_products .product_img{
+    width: 100%;
+    height: auto;
+}
+.meckey_products .meckey_product_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+}
+.meckey_products .product_name_text{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    color: #111111;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+    padding-bottom: 7.5px;
+}
+.meckey_products .product_rating{
+    color: #ffb100;
+    font-size: 15px;
+    display: inline-block;
+}
+.meckey_products .product_prices{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 0.5em;
+}
+.meckey_products .product_orginal{
+    color: #969494;
+    text-decoration: line-through;
+    font-size: 12px;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+    font-weight: 500;
+}
+.meckey_products .product_discount{
+    font-size: 12px;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+    font-weight: 500;
+}
