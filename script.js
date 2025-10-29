@@ -169,7 +169,12 @@ products.map((product)=>{
     productLi.innerHTML=`
     <div class="meckey_product_div">
         <div class="meckey_product_img">
-            <img src="${product.src}" alt="" class="product_img">           
+            <img src="${product.src}" alt="" class="product_img">
+            <div class="meckey_product_like">
+            <div class="meckey_like_div">
+                <img src="img/white _like.svg" alt="" class="meckey_like_logo">
+            </div>
+        </div>           
         </div>
         <div class="meckey_product_details">
             <h2 class="product_name_text">${product.name}</h2>
@@ -179,7 +184,91 @@ products.map((product)=>{
                 <span class="product_discount">${product.price}</span>
             </span>
         </div>
+        
     </div>
+    
     `
     product_container.appendChild(productLi)
+})
+const priceFilter = document.getElementById('priceFilter');
+const mainPage = document.getElementById('mainPage');
+const pricePage = document.getElementById('pricePage');
+const backBtn = document.getElementById('backBtn');
+
+priceFilter.addEventListener('click', () => {
+  mainPage.style.display = 'none';
+  pricePage.style.display = 'flex';
+});
+
+backBtn.addEventListener('click', () => {
+  pricePage.style.display = 'none';
+  mainPage.style.display = 'block';
+});
+
+const leftThumb=document.querySelector('.price_left_thumb')
+const rightThumb=document.querySelector('.price_right_thumb')
+const rangeLine=document.querySelector('.price_outside_line')
+const minOutput = document.querySelector('.price_min')
+const maxOutput=document.querySelector('.price_max')
+const blocks=document.querySelectorAll('.price_each_block')
+
+const minGap=100
+const sliderMax = parseInt(leftThumb.max)
+
+function updateRange(){
+    let leftVal= parseInt(leftThumb.value)
+    let rightVal= parseInt(rightThumb.value)
+
+    const leftPercent = (leftVal/sliderMax)*100
+    const rightPercent = (rightVal/sliderMax)*100
+
+    rangeLine.style.left = `${leftPercent}%`
+    rangeLine.style.width = `${rightPercent-leftPercent}%`
+    
+    minOutput.textContent=(leftVal===0)?'min':`₹${leftVal.toLocaleString()}`
+    maxOutput.textContent=(rightVal===10000)?'max':`₹${rightVal.toLocaleString()}`
+
+    if(blocks.length>0){
+        const totalBlocks = blocks.length
+        const rangeStep =sliderMax/totalBlocks
+
+        blocks.forEach((block,index) => {
+            const blockValue=rangeStep*index
+            if(blockValue>=leftVal && blockValue <= rightVal){
+                block.style.opacity=0.5
+            }
+            else{
+                block.style.opacity =0.2
+            }
+        }); 
+    }
+    
+}                               
+leftThumb.addEventListener('input',()=>{
+    if(parseInt(rightThumb.value)-parseInt(leftThumb.value)<= minGap){
+        leftThumb.value=parseInt(rightThumb.value)-minGap
+    }
+    updateRange()
+})
+rightThumb.addEventListener('input',()=>{
+    if(parseInt(rightThumb.value)-parseInt(leftThumb.value)<=minGap){
+        rightThumb.value=parseInt(leftThumb.value)+minGap
+    }
+    updateRange()
+})
+
+updateRange()
+
+const brands=document.getElementById('priceBrand')
+const brandPage=document.getElementById('brandPage')
+const backBtnBrand=document.getElementById('backBtnbrand')
+
+brands.addEventListener('click',()=>{
+    mainPage.style.display='none'
+    brandPage.style.display='flex'
+})
+
+backBtnBrand.addEventListener('click',()=>{
+    mainPage.style.display='block'
+    brandPage.style.display='none'
 })
