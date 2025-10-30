@@ -60,7 +60,7 @@
                         <p class="meckey_showing_result">Showing 1–12 of 157 results</p>
                     </div>
                     <div class="meckey_filter_option">
-                        <div class="meckey_filter_text" id="priceFilter">Price</div><!----><div class="meckey_filter_text" id="priceBrand">Brands</div><!----><div class="meckey_filter_text meckey_all_filter">All filters
+                        <div class="meckey_filter_text" id="priceFilter">Price</div><!----><div class="meckey_filter_text" id="priceBrand">Brands</div><!----><div class="meckey_filter_text meckey_all_filter" id="filterBtn">All filters
                             <img src="img/meckey_filter_black.svg" alt="" class="meckey_filter_logo">
                         </div>
                     </div>
@@ -73,6 +73,7 @@
         <div class="arrow_back_div">
             <div class="arrow_back" id="backBtn"><img src="img/price_arrow_back.svg" alt="" class="arrow_logo"></div>
             <p class="price_newpg_text">Price</p>
+            <div class="price_page_clear">Clear</div>
         </div>
         <div class="price_range">
             <div class="price_range_div">
@@ -108,13 +109,117 @@
             </div>
         </div>
         <div class="price_page_seeproduct">
-            <div class="see_product_text">See 157 products</div>
+            <div class="see_product_text">See products</div>
         </div>
     </div>
-    <div id="brandPage" class="brand_page">
+    <div id="brandPage" class="brand_page price_page">
         <div class="arrow_back_div">
             <div class="arrow_back" id="backBtnbrand"><img src="img/price_arrow_back.svg" alt="" class="arrow_logo"></div>
             <p class="price_newpg_text">Brands</p>
+            <div class="brand_page_clear">Clear</div>
+        </div>
+        <div class="brand_page_content">
+            <div class="brand_content_div">
+                <ul class="brand_content_ul"></ul>
+            </div>
+        </div>
+        <div class="price_page_seeproduct">
+            <div class="see_product_text">See products</div>
+        </div>
+    </div>
+    <div class="filter_page price_page brand_page" id="filterPage">
+       <div class="arrow_back_div">
+            <div class="arrow_back" id="backBtnfilter"><img src="img/price_arrow_back.svg" alt="" class="arrow_logo"></div>
+            <p class="price_newpg_text">filter</p>
+            <div class="filter_page_clear">Clear</div>
+        </div>
+        <div class="filter_content">
+            <div class="filter_price_range">
+                <div class="price_range_div filter_range_div">
+                    <div class="price_range_margin">
+                        <div class="price_range_heading"><h3 class="filter_head_text">Price</h3></div>
+                        <div class="price_blocks">
+                            <span class="price_each_block" style="width: 21.0625px;height: 21.4219px;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 19.2812px;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 25.7031px;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 45px;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 14.9844px;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 6.42188px;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 57.1429%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 9.52381%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 28.5714%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 19.0476%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 4.7619%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 0%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 4.7619%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 4.7619%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 9.52381%;"></span>
+                            <span class="price_each_block" style="width: 21.0625px;height: 9.52381%;"></span>
+                        </div>
+                        <div class="price_range_line">
+                            <div class="price_outside_line"></div>
+                            <input type="range" title="min" class="price_left_thumb thumb" min="0" max="10000" value="0" step="1" >
+                            <input type="range" title="max" class="price_right_thumb thumb" min="0" max="10000" value="10000" step="1" >
+                        </div>
+                        <div class="price_min_max">
+                            <span class="price_min">min.</span>
+                            <span class="price_max">max.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter_page_content">
+                <div class="brand_content_div filter_brand_div">
+                    <div class="price_range_heading"><h3 class="filter_head_text">Brands</h3></div>
+                    <ul class="brand_content_ul filter_content_ul"></ul>
+                </div>
+            </div>
+            <div class="filter_page_content">
+                <div class="brand_content_div filter_brand_div">
+                    <div class="price_range_heading"><h3 class="filter_head_text">Size</h3></div>
+                    <ul class="size_content_ul filter_content_ul"></ul>
+                </div>
+            </div>
+            <div class="filter_page_content">
+                <div class="brand_content_div filter_brand_div">
+                    <div class="price_range_heading"><h3 class="filter_head_text">Connectivity</h3></div>
+                    <ul class="connect_content_ul filter_content_ul"></ul>
+                </div>
+            </div>
+            <div class="filter_page_content">
+                <div class="brand_content_div filter_brand_div">
+                    <div class="price_range_heading"><h3 class="filter_head_text">Key Switches</h3></div>
+                    <ul class="key_content_ul filter_content_ul"></ul>
+                </div>
+            </div>
+            <div class="filter_page_content">
+                <div class="brand_content_div filter_brand_div">
+                    <div class="price_range_heading"><h3 class="filter_head_text">Keycaps</h3></div>
+                    <ul class="keycaps_content_ul filter_content_ul"></ul>
+                </div>
+            </div>
+            <div class="filter_page_stock">
+                <div class="stock_heading"><h3 class="stock_head_text">Stock status</h3></div>
+                <div class="stock_options">
+                    <ul class="stock_ul">
+                        <li class="stock_li">
+                            <div class="stock_radio"></div>
+                            <div class="stock_option">Any</div>
+                        </li>
+                        <li class="stock_li">
+                            <div class="stock_radio"></div>
+                            <div class="stock_option">In stock</div>
+                        </li>
+                        <li class="stock_li">
+                            <div class="stock_radio"></div>
+                            <div class="stock_option">Out of stock</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="price_page_seeproduct">
+                <div class="see_product_text">See products</div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

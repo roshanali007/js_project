@@ -305,7 +305,7 @@ body{
     position: fixed;
     top: 0;
     z-index: 11;
-
+    width: 100%;
 }
 .price_page .arrow_back{
     border-radius: 4px;
@@ -458,4 +458,192 @@ body{
     line-height: 23px;
     margin: 0 8px;
     font-family:'Poppins','Lucida Console', 'Monaco', monospace;
+}
+.brand_page .brand_page_content{
+    margin-bottom: 100px;
+    margin-top: 58px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.brand_page .brand_content_div{
+    border-bottom: 1px solid #f2f2f2;
+    padding: 27.6px 0 15px;
+}
+.brand_page .brand_content_ul{
+    list-style: none;
+}
+.brand_page .brand_content_li{
+    padding: 0 0 .5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.brand_page .brand_checkbox{
+    border-radius: .175em;
+    box-shadow: inset 0 0 0 1px #767676;
+    height: 20px;
+    min-width: 20px;
+    width: 20px;
+    margin-right: .6em;
+    position: relative;
+}
+.brand_page .brand_name_text,.brand_page .brand_more_text{
+    color: #161616;
+    line-height: 1.5em;
+    font-size: 14px;
+    font-family:'Poppins','Lucida Console', 'Monaco', monospace;
+}
+.brand_page .checkbox_logo{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+ .brand_page_clear{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #767676;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    padding: 8px;
+    margin-left: auto;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+}
+ .brand_page_clear::before{
+    color: #d9d9d9;
+    content: "|";
+    display: inline-block;
+    font-size: 15px;
+    line-height: 19px;
+    margin: 0 6px 0 auto;
+}
+.price_page_clear{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #767676;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    padding: 8px;
+    margin-left: auto;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+}
+ .price_page_clear::before{
+    color: #d9d9d9;
+    content: "|";
+    display: inline-block;
+    font-size: 15px;
+    line-height: 19px;
+    margin: 0 6px 0 auto;
+}
+.filter_page{
+    display: none;
+}
+.filter_content{
+    margin-bottom: 66px;
+    margin-top: 58px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.price_page .filter_range_div{
+    padding: 15px 0;
+}
+.brand_page .filter_brand_div{
+    padding: 15px 0;
+}
+.filter_range_heading{
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+.filter_head_text{
+    align-items: center;
+    color: #161616;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    gap: 3px;
+    line-height: 23px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+}
+.brand_page .filter_content_ul{
+    padding: 12.6px 0 0;
+}
+.filter_page_clear{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #767676;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    padding: 8px;
+    margin-left: auto;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+}
+ .filter_page_clear::before{
+    color: #d9d9d9;
+    content: "|";
+    display: inline-block;
+    font-size: 15px;
+    line-height: 19px;
+    margin: 0 6px 0 auto;
+} 
+.filter_page_stock{
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 34px;
+    padding: 15px 0;
+}
+.stock_heading{
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+.stock_head_text{
+    align-items: center;
+    color: #161616;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    gap: 3px;
+    line-height: 23px;
+    font-family: 'Poppins','Lucida Console', 'Monaco', monospace;
+}
+.stock_options{
+    padding: .9em 0 0
+}
+.stock_ul{
+    list-style: none;
+}
+.stock_li{
+    padding: 0 0 .5em;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+.stock_radio{
+    border-radius: 100%;
+    background-color: transparent;
+    height: 1.33em;
+    width: 1.33em;
+    margin-right: .6em;
+    box-shadow: inset 0 0 0 1px #767676;
+}
+.stock_option{
+    font-size: 14px;
+    font-family:'Poppins','Lucida Console', 'Monaco', monospace ;
+    color: #161616;
+    line-height: 1.5em;
+}
+.stock_radio.active {
+  box-shadow: inset 0 0 0 4px #000000;
 }
