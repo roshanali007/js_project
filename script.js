@@ -495,32 +495,39 @@ setupCheckboxes();
     const backBtn = document.getElementById('backBtn');
     const backBtnBrand = document.getElementById('backBtnbrand');
     const backBtnFilter = document.getElementById('backBtnfilter');
+    const header=document.querySelector('.meckey_header')
 
     priceFilter.addEventListener('click', () => {
     mainPage.style.display = 'none';
     pricePage.style.display = 'flex';
+    header.style.display='none'
     });
     backBtn.addEventListener('click', () => {
     pricePage.style.display = 'none';
     mainPage.style.display = 'block';
+    header.style.display='block'
     });
 
     brands.addEventListener('click', () => {
     mainPage.style.display = 'none';
     brandPage.style.display = 'flex';
+    header.style.display='none'
     });
     backBtnBrand.addEventListener('click', () => {
     mainPage.style.display = 'block';
     brandPage.style.display = 'none';
+    header.style.display='block'
     });
 
     filterBtn.addEventListener('click', () => {
     mainPage.style.display = 'none';
     filterPage.style.display = 'flex';
+    header.style.display='none'
     });
     backBtnFilter.addEventListener('click', () => {
     mainPage.style.display = 'block';
     filterPage.style.display = 'none';
+    header.style.display='block'
     });
 
 
@@ -1011,9 +1018,10 @@ setupCheckboxes();
     document.querySelectorAll('.see_product_text').forEach((btn) => {
         btn.addEventListener('click', () => {
             mainPage.style.display = 'block';
+            header.style.display='block'
             pricePage.style.display = 'none';
             brandPage.style.display = 'none';
             filterPage.style.display = 'none';
         });
-    });                
+    });          
 })

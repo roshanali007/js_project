@@ -66,6 +66,9 @@ body{
     max-width: 120px;
     height: auto;
 }
+.meckey_menu{
+    display: none;
+}
 .meckey_header .meckey_nav_right{
     display: flex;
     align-items: center;
@@ -646,4 +649,154 @@ body{
 }
 .stock_radio.active {
   box-shadow: inset 0 0 0 4px #000000;
+}
+@media screen and (min-width:768px){
+    .meckey_header .meckey_cart_div {
+        padding: 0 7px;
+    }
+    .meckey_header .meckey_cart_count{
+        margin-right: 7px;
+    }
+    .meckey_header .meckey_right_login {
+        padding: 3px 5px 4px 3px;
+    }
+    .meckey_header .meckey_right_search {
+        padding: 3px 2px 4px 3px;
+    }
+    .meckey_main .meckey_path{
+        height: 15.59px;
+    }
+    .meckey_main .meckey_text{
+        padding-bottom: 2px;
+    }
+    .meckey_main .meckey_showing_result {
+        padding-top: 1px;
+    }
+    .meckey_main .meckey_filter_text{
+        line-height: 17.875px;
+        font-size: 14.3px;
+        padding-bottom: 9px;
+    }
+    .meckey_main .meckey_filter_option {
+        padding: 12px 0 20px;
+    }
+    .meckey_products {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .meckey_header .meckey_nav_div{
+        max-width: 1024px;
+    }
+}
+@media screen and (min-width:1024px){
+    .meckey_header .meckey_right_burger{
+        display: none;
+    }
+    .meckey_header .meckey_header_nav{
+        max-height: 60px;
+        display: flex;
+    }
+    .meckey_header .meckey_left_div{
+        padding: 0;
+        margin: 0;
+    }
+    .meckey_menu{
+        display: block;
+        margin: 8px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .meckey_menu .meckey_menu_ul{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -10px;
+        margin-left: -10px;
+        list-style: none;
+    }
+    .meckey_menu .meckey_menu_li{
+        margin: 0 10px;
+    }
+    .meckey_menu .meckey_menu_text_div{
+        display: flex;
+        align-items: center;
+        padding: 0 4px;
+    }
+    .meckey_menu .meckey_menu_text{
+        color: white;
+        min-height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 14px;
+        line-height: 1.6;
+        font-weight: 500;
+        font-family: 'font1';
+    }
+    .meckey_menu .arrow_down{
+        margin-left: 5px;
+        height: 7px;
+        width: 7px;
+    }
+    .meckey_header .meckey_cart_count {
+        font-size: 8.4px;
+        padding-bottom: 4px;
+    }
+    .meckey_header .meckey_cart_div {
+        margin-top: 8px;
+    }
+    .meckey_header .meckey_right_cart {
+        padding: 3px 3px 4px 8px;
+    }
+    .meckey_header .meckey_right_login{
+        padding: 7px 5px 4px 8px;
+    }
+    .meckey_header .meckey_right_search {
+        padding-top: 2px;
+    }
+    .meckey_header .meckey_right_search{
+        padding-left:12px;
+    }
+    .meckey_header .meckey_nav_right {
+        max-height: 60px;
+    }
+    .meckey_main .meckey_filter_option{
+        display: none;
+    }
+    .meckey_main .meckey_product_path {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .meckey_main{
+        max-width: 1024px;
+        width: 100%;
+    }
+    .meckey_products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .filter_page{
+        display: flex !important;
+    }
+    .brand_page .arrow_back_div{
+        display: none;  
+    }
+    .price_page .price_page_seeproduct{
+        display: none;
+    }
+    .meckey_main_body{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        max-width: 1170px;
+        margin: auto;
+    }
+    .brand_page{
+        z-index: 0;
+        max-width: 30%;
+    }
+    .meckey_header .meckey_nav_div{
+        max-width: 1170px;
+        margin: auto;
+    }
+    #mainPage{
+        min-width: 70%;
+    }
 }
