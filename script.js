@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Arion Frost Barebone',
             rate:'★★★★☆',
             dis_price:'₹15,000.00',
-            price:'₹5,999.00'
+            price:'₹5,999.00',
+            connectivity:'wired',
+            size:100
         },
         {
             id:2,
@@ -14,7 +16,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Royal Kludge R75-WIRELESS',
             rate:'★★★★☆',
             dis_price:'₹9,000.00',
-            price:'₹5,499.00'
+            price:'₹5,499.00',
+            connectivity:'wireless',
+            size:60
         },
         {
             id:3,
@@ -22,7 +26,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Keychron V5 Max Wireless',
             rate:'★★★★★',
             dis_price:'₹16,000.00',
-            price:'₹9,500.00'
+            price:'₹9,500.00',
+            connectivity:'wireless',
+            size:65
         },
         {
             id:4,
@@ -30,7 +36,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Arion Frost x Keychron K8 Pro',
             rate:'★★★★★',
             dis_price:'₹15,000.00',
-            price:'₹7,999.00'
+            price:'₹7,999.00',
+            connectivity:'wired',
+            size:75
         },
         {
             id:5,
@@ -38,7 +46,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'EPOMAKER x AULA F75',
             rate:'★★★★★',
             dis_price:'₹7,500.00',
-            price:'₹5,999.00'
+            price:'₹5,999.00',
+            connectivity:'wired',
+            size:80
         },
         {
             id:6,
@@ -46,7 +56,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'EPOMAKER X GALAXY 100',
             rate:'★★★☆☆',
             dis_price:'₹17,000.00',
-            price:'₹4,999.00'
+            price:'₹4,999.00',
+            connectivity:'wired',
+            size:100
         },
         {
             id:7,
@@ -54,7 +66,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Royal Kludge R65-WIRELESS',
             rate:'★★★☆☆',
             dis_price:'₹10,000.00',
-            price:'₹2,999.00'
+            price:'₹2,999.00',
+            connectivity:'wireless',
+            size:60
         },
         {
             id:8,
@@ -62,7 +76,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'EPOMAKER x AULA F75',
             rate:'★★★★☆',
             dis_price:'₹15,000.00',
-            price:'₹5,999.00'
+            price:'₹5,999.00',
+            connectivity:'wired',
+            size:65
         },
         {
             id:9,
@@ -70,7 +86,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'EPOMAKER x AULA F75 MAX',
             rate:'★★★★★',
             dis_price:'₹10,500.00',
-            price:'₹6,999.00'
+            price:'₹6,999.00',
+            connectivity:'wired',
+            size:75
         },
         {
             id:10,
@@ -78,7 +96,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Royal Kludge RK R75',
             rate:'★★★★★',
             dis_price:'₹7,000.00',
-            price:'₹4,699.00'
+            price:'₹4,699.00',
+            connectivity:'wired',
+            size:80
         },
         {
             id:11,
@@ -86,7 +106,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'EPOMAKER x AULA F99 Pro',
             rate:'★★☆☆☆',
             dis_price:'₹15,000.00',
-            price:'₹7,900.00'
+            price:'₹7,900.00',
+            connectivity:'wired',
+            size:100
         },
         {
             id:12,
@@ -94,7 +116,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Aula F87 Pro Wireless',
             rate:'★★★★☆',
             dis_price:'₹15,000.00',
-            price:'₹5,999.00'
+            price:'₹5,999.00',
+            connectivity:'wireless',
+            size:60
         },
         {
             id:13,
@@ -102,7 +126,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Aula F75 MAX',
             rate:'★★★★☆',
             dis_price:'₹12,500.00',
-            price:'₹7,500.00'
+            price:'₹7,500.00',
+            connectivity:'wired',
+            size:65
         },
         {
             id:14,
@@ -110,7 +136,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Roayl Kludge RK R65',
             rate:'★★★★★',
             dis_price:'₹6,500.00',
-            price:'₹4,399.00'
+            price:'₹4,399.00',
+            connectivity:'wired',
+            size:75
         },
         {
             id:15,
@@ -118,7 +146,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'EPOMAKER X AJAZZ AK820 Pro',
             rate:'★★★★★',
             dis_price:'₹7,500.00',
-            price:'₹5,999.00'
+            price:'₹5,999.00',
+            connectivity:'wired',
+            size:80
         },
         {
             id:16,
@@ -126,7 +156,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Ducky one 3 SF Pure White RGB',
             rate:'★☆☆☆☆',
             dis_price:'₹12,199.00',
-            price:'₹6,099.00'
+            price:'₹6,099.00',
+            connectivity:'wired',
+            size:100
         },
         {
             id:17,
@@ -134,7 +166,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'SK61 - RGB(Gateron Optical Switches)',
             rate:'★★★★★',
             dis_price:'₹10,000.00',
-            price:'₹4,799.00'
+            price:'₹4,799.00',
+            connectivity:'wired',
+            size:60
         },
         {
             id:18,
@@ -142,7 +176,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Aula F99 Wireless',
             rate:'★☆☆☆☆',
             dis_price:'₹10,000.00',
-            price:'₹7,500.00'
+            price:'₹7,500.00',
+            connectivity:'wireless',
+            size:65
         },
         {
             id:19,
@@ -150,7 +186,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Skyloong GK61 - V2',
             rate:'★★☆☆☆',
             dis_price:'₹7,000.00',
-            price:'₹4,999.00'
+            price:'₹4,999.00',
+            connectivity:'wired',
+            size:75
         },
         {
             id:20,
@@ -158,7 +196,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             name:'Royal Kludge RK M87',
             rate:'★☆☆☆☆',
             dis_price:'₹11,000.00',
-            price:'₹8,999.00'
+            price:'₹8,999.00',
+            connectivity:'wired',
+            size:80
         },
     ]
 
@@ -504,6 +544,476 @@ setupCheckboxes();
         radio.classList.add('active');
     });
     });
+                
+    const filterState = {
+        minPrice: 0,
+        maxPrice: 10000,
+        selectedBrands: [],
+        selectedSizes: [],
+        selectedConnectivity: []
+    };
 
+    let isSyncing = false;
+
+    function renderProducts(productsToRender) {
+        product_container.innerHTML = ''; 
+        
+        productsToRender.forEach((product) => {
+            const productLi = document.createElement('li');
+            productLi.classList.add('meckey_product_list');
+            productLi.innerHTML = `
+            <div class="meckey_product_div">
+                <div class="meckey_product_img">
+                    <img src="${product.src}" alt="" class="product_img">
+                    <div class="meckey_product_like">
+                    <div class="meckey_like_div">
+                        <img src="img/white _like.svg" alt="" class="meckey_like_logo">
+                    </div>
+                </div>           
+                </div>
+                <div class="meckey_product_details">
+                    <h2 class="product_name_text">${product.name}</h2>
+                    <div class="product_rating">${product.rate}</div>
+                    <span class="product_prices">
+                        <span class="product_orginal">${product.dis_price}</span>
+                        <span class="product_discount">${product.price}</span>
+                    </span>
+                </div>
+            </div>
+            `;
+            product_container.appendChild(productLi);
+        });
+        
+        const showingResult = document.querySelector('.meckey_showing_result');
+        showingResult.textContent = `Showing 1–${productsToRender.length} of ${productsToRender.length} results`;
+    }
+
+    function priceToNumber(priceString) {
+        return parseInt(priceString.replace('₹', '').replace(/,/g, '').replace('.00', ''));
+    }
+
+    function getSelectedBrands(pageSelector) {
+        const page = document.querySelector(pageSelector);
+        const activeCheckboxes = page.querySelectorAll('.brand_content_ul .brand_checkbox.active');
+        const selectedBrands = [];
+        
+        activeCheckboxes.forEach((checkbox) => {
+            const brandName = checkbox.nextElementSibling.textContent;
+            selectedBrands.push(brandName.toLowerCase());
+        });
+        
+        return selectedBrands;
+    }
+
+    function getSelectedSizes(pageSelector) {
+        const page = document.querySelector(pageSelector);
+        const activeCheckboxes = page.querySelectorAll('.size_content_ul .brand_checkbox.active');
+        const selectedSizes = [];
+        
+        activeCheckboxes.forEach((checkbox) => {
+            const sizeName = checkbox.nextElementSibling.textContent;
+            const sizeValue = parseInt(sizeName.replace('%', ''));
+            selectedSizes.push(sizeValue);
+        });
+        
+        return selectedSizes;
+    }
+
+    function getSelectedConnectivity(pageSelector) {
+        const page = document.querySelector(pageSelector);
+        const activeCheckboxes = page.querySelectorAll('.connect_content_ul .brand_checkbox.active');
+        const selectedConnectivity = [];
+        
+        activeCheckboxes.forEach((checkbox) => {
+            const connectName = checkbox.nextElementSibling.textContent;
+            selectedConnectivity.push(connectName.toLowerCase());
+        });
+        
+        return selectedConnectivity;
+    }
+
+    function filterProductsWithState() {
+        return products.filter((product) => {
+
+            const productPrice = priceToNumber(product.price);
+            const priceMatch = productPrice >= filterState.minPrice && productPrice <= filterState.maxPrice;
+            
+            let brandMatch = true;
+            if (filterState.selectedBrands.length > 0) {
+                const productName = product.name.toLowerCase();
+                brandMatch = filterState.selectedBrands.some(brand => productName.includes(brand));
+            }
+            
+            let sizeMatch = true;
+            if (filterState.selectedSizes.length > 0) {
+                sizeMatch = filterState.selectedSizes.includes(product.size);
+            }
+            
+            let connectivityMatch = true;
+            if (filterState.selectedConnectivity.length > 0) {
+                connectivityMatch = filterState.selectedConnectivity.includes(product.connectivity.toLowerCase());
+            }
+            
+            return priceMatch && brandMatch && sizeMatch && connectivityMatch;
+        });
+    }
+
+    function applyGlobalFilters() {
+        const filteredProducts = filterProductsWithState();
+        renderProducts(filteredProducts);
+    }
+
+    function updateRangeVisuals(pageSelector) {
+        const page = document.querySelector(pageSelector);
+        const leftThumb = page.querySelector('.price_left_thumb');
+        const rightThumb = page.querySelector('.price_right_thumb');
+        const rangeLine = page.querySelector('.price_outside_line');
+        const minOutput = page.querySelector('.price_min');
+        const maxOutput = page.querySelector('.price_max');
+        const blocks = page.querySelectorAll('.price_each_block');
+        
+        const sliderMax = parseInt(leftThumb.max);
+        const leftVal = parseInt(leftThumb.value);
+        const rightVal = parseInt(rightThumb.value);
+        
+        const leftPercent = (leftVal / sliderMax) * 100;
+        const rightPercent = (rightVal / sliderMax) * 100;
+        
+        rangeLine.style.left = `${leftPercent}%`;
+        rangeLine.style.width = `${rightPercent - leftPercent}%`;
+        
+        minOutput.textContent = leftVal === 0 ? 'min' : `₹${leftVal.toLocaleString()}`;
+        maxOutput.textContent = rightVal === sliderMax ? 'max' : `₹${rightVal.toLocaleString()}`;
+        
+        blocks.forEach((block, index) => {
+            const blockValue = (sliderMax / blocks.length) * index;
+            block.style.opacity = blockValue >= leftVal && blockValue <= rightVal ? 0.5 : 0.2;
+        });
+    }
+
+    function updatePriceClearButton(pageSelector) {
+        const page = document.querySelector(pageSelector);
+        const clearBtn = page.querySelector('.price_page_clear');
+        
+        if (clearBtn) {
+            const isPriceChanged = filterState.minPrice !== 0 || filterState.maxPrice !== 10000;
+            clearBtn.style.display = isPriceChanged ? 'block' : 'none';
+        }
+    }
+
+    function updateBrandClearButton() {
+        const clearBtn = document.querySelector('.brand_page_clear');
+        
+        if (clearBtn) {
+            const hasBrandsSelected = filterState.selectedBrands.length > 0;
+            clearBtn.style.display = hasBrandsSelected ? 'block' : 'none';
+        }
+    }
+
+    function updateFilterPageClearButton() {
+        const filterClearBtn = document.querySelector('.filter_page_clear');
+        
+        if (filterClearBtn) {
+            const isPriceChanged = filterState.minPrice !== 0 || filterState.maxPrice !== 10000;
+            const hasBrandsSelected = filterState.selectedBrands.length > 0;
+            const hasSizesSelected = filterState.selectedSizes.length > 0;
+            const hasConnectivitySelected = filterState.selectedConnectivity.length > 0;
+            
+            const anyFilterActive = isPriceChanged || hasBrandsSelected || hasSizesSelected || hasConnectivitySelected;
+            
+            filterClearBtn.style.display = anyFilterActive ? 'block' : 'none';
+        }
+    }
+
+    function syncPriceSlidersVisually(sourcePageSelector, targetPageSelector) {
+        if (isSyncing) return; 
+        
+        const sourcePage = document.querySelector(sourcePageSelector);
+        const targetPage = document.querySelector(targetPageSelector);
+        
+        if (!sourcePage || !targetPage) return;
+        
+        const sourceLeft = sourcePage.querySelector('.price_left_thumb');
+        const sourceRight = sourcePage.querySelector('.price_right_thumb');
+        const targetLeft = targetPage.querySelector('.price_left_thumb');
+        const targetRight = targetPage.querySelector('.price_right_thumb');
+        
+        if (targetLeft && targetRight && sourceLeft && sourceRight) {
+            isSyncing = true;
+            
+            targetLeft.value = sourceLeft.value;
+            targetRight.value = sourceRight.value;
+            updateRangeVisuals(targetPageSelector);
+            updatePriceClearButton(targetPageSelector);
+            isSyncing = false;
+        }
+    }
+
+    function updatePriceFilter(minPrice, maxPrice, sourcePageSelector) {
+        if (isSyncing) return; 
+        
+        filterState.minPrice = minPrice;
+        filterState.maxPrice = maxPrice;
+        updatePriceClearButton(sourcePageSelector);
+        updateFilterPageClearButton();
+        if (sourcePageSelector === '#pricePage') {
+            syncPriceSlidersVisually('#pricePage', '#filterPage');
+        } else if (sourcePageSelector === '#filterPage') {
+            syncPriceSlidersVisually('#filterPage', '#pricePage');
+        }
+        
+        applyGlobalFilters();
+    }
+
+    function updateBrandFilter(pageSelector) {
+        filterState.selectedBrands = getSelectedBrands(pageSelector);
+        updateBrandClearButton();
+    
+        updateFilterPageClearButton();
+        
+        applyGlobalFilters();
+    }
+
+    function updateSizeFilter(pageSelector) {
+        filterState.selectedSizes = getSelectedSizes(pageSelector);
+        
+        updateFilterPageClearButton();
+        
+        applyGlobalFilters();
+    }
+
+    function updateConnectivityFilter(pageSelector) {
+        filterState.selectedConnectivity = getSelectedConnectivity(pageSelector);
+        
+        updateFilterPageClearButton();
+        
+        applyGlobalFilters();
+    }
+
+    function syncCheckboxesAcrossPages(sourcePageSelector, targetPageSelector, ulClass) {
+        const sourcePage = document.querySelector(sourcePageSelector);
+        const targetPage = document.querySelector(targetPageSelector);
+        
+        if (!sourcePage || !targetPage) return;
+        
+        const sourceCheckboxes = sourcePage.querySelectorAll(`${ulClass} .brand_content_li`);
+        const targetCheckboxes = targetPage.querySelectorAll(`${ulClass} .brand_content_li`);
+        
+        sourceCheckboxes.forEach((sourceLi, index) => {
+            const sourceCheckbox = sourceLi.querySelector('.brand_checkbox');
+            const targetCheckbox = targetCheckboxes[index]?.querySelector('.brand_checkbox');
+            
+            if (targetCheckbox) {
+                const sourceLogo = sourceCheckbox.querySelector('.checkbox_logo');
+                const targetLogo = targetCheckbox.querySelector('.checkbox_logo');
+                
+                if (sourceCheckbox.classList.contains('active')) {
+                    targetCheckbox.classList.add('active');
+                    targetCheckbox.style.background = '#000000';
+                    targetLogo.style.display = 'block';
+                } else {
+                    targetCheckbox.classList.remove('active');
+                    targetCheckbox.style.background = '#fff';
+                    targetLogo.style.display = 'none';
+                }
+            }
+        });
+        
+        updateBrandClearButton();
+        updateFilterPageClearButton();
+    }
+
+    function setupPricePageFiltering() {
+        const pageSelector = '#pricePage';
+        const page = document.querySelector(pageSelector);
+        const leftThumb = page.querySelector('.price_left_thumb');
+        const rightThumb = page.querySelector('.price_right_thumb');
+        
+        leftThumb.addEventListener('input', () => {
+            if (isSyncing) return;
+            const minPrice = parseInt(leftThumb.value);
+            const maxPrice = parseInt(rightThumb.value);
+            updatePriceFilter(minPrice, maxPrice, pageSelector);
+        });
+        
+        rightThumb.addEventListener('input', () => {
+            if (isSyncing) return;
+            const minPrice = parseInt(leftThumb.value);
+            const maxPrice = parseInt(rightThumb.value);
+            updatePriceFilter(minPrice, maxPrice, pageSelector);
+        });
+    }
+
+    function setupFilterPageFiltering() {
+        const pageSelector = '#filterPage';
+        const page = document.querySelector(pageSelector);
+        const leftThumb = page.querySelector('.price_left_thumb');
+        const rightThumb = page.querySelector('.price_right_thumb');
+        
+        leftThumb.addEventListener('input', () => {
+            if (isSyncing) return;
+            const minPrice = parseInt(leftThumb.value);
+            const maxPrice = parseInt(rightThumb.value);
+            updatePriceFilter(minPrice, maxPrice, pageSelector);
+        });
+        
+        rightThumb.addEventListener('input', () => {
+            if (isSyncing) return;
+            const minPrice = parseInt(leftThumb.value);
+            const maxPrice = parseInt(rightThumb.value);
+            updatePriceFilter(minPrice, maxPrice, pageSelector);
+        });
+        
+        setTimeout(() => {
+            const brandCheckboxes = page.querySelectorAll('.brand_content_ul .brand_checkbox');
+            brandCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener('click', () => {
+                    setTimeout(() => {
+                        updateBrandFilter(pageSelector);
+                        syncCheckboxesAcrossPages('#filterPage', '#brandPage', '.brand_content_ul');
+                    }, 50);
+                });
+            });
+            
+            const sizeCheckboxes = page.querySelectorAll('.size_content_ul .brand_checkbox');
+            sizeCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener('click', () => {
+                    setTimeout(() => updateSizeFilter(pageSelector), 50);
+                });
+            });
+            
+            const connectCheckboxes = page.querySelectorAll('.connect_content_ul .brand_checkbox');
+            connectCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener('click', () => {
+                    setTimeout(() => updateConnectivityFilter(pageSelector), 50);
+                });
+            });
+        }, 100);
+    }
+
+    function setupBrandPageFiltering() {
+        const pageSelector = '#brandPage';
+        
+        setTimeout(() => {
+            const brandCheckboxes = document.querySelectorAll('#brandPage .brand_checkbox');
+            brandCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener('click', () => {
+                    setTimeout(() => {
+                        updateBrandFilter(pageSelector);
+                        syncCheckboxesAcrossPages('#brandPage', '#filterPage', '.brand_content_ul');
+                    }, 50);
+                });
+            });
+        }, 100);
+    }
+
+    setupPricePageFiltering();
+    setupFilterPageFiltering();
+    setupBrandPageFiltering();
+
+    document.querySelector('#pricePage .price_page_clear').addEventListener('click', () => {
+        isSyncing = true;
+        
+        filterState.minPrice = 0;
+        filterState.maxPrice = 10000;
+        
+        const pricePageLeft = document.querySelector('#pricePage .price_left_thumb');
+        const pricePageRight = document.querySelector('#pricePage .price_right_thumb');
+        const filterPageLeft = document.querySelector('#filterPage .price_left_thumb');
+        const filterPageRight = document.querySelector('#filterPage .price_right_thumb');
+        
+        pricePageLeft.value = 0;
+        pricePageRight.value = 10000;
+        filterPageLeft.value = 0;
+        filterPageRight.value = 10000;
+        
+        updateRangeVisuals('#pricePage');
+        updateRangeVisuals('#filterPage');
+        
+        updatePriceClearButton('#pricePage');
+        updatePriceClearButton('#filterPage');
+        updateFilterPageClearButton();
+        
+        isSyncing = false;
+        
+        applyGlobalFilters();
+    });
+
+    document.querySelector('#brandPage .brand_page_clear').addEventListener('click', () => {
+        filterState.selectedBrands = [];
+        
+        document.querySelectorAll('#brandPage .brand_content_ul .brand_checkbox').forEach((checkbox) => {
+            const logo = checkbox.querySelector('.checkbox_logo');
+            logo.style.display = 'none';
+            checkbox.style.background = '#fff';
+            checkbox.classList.remove('active');
+        });
+        
+        document.querySelectorAll('#filterPage .brand_content_ul .brand_checkbox').forEach((checkbox) => {
+            const logo = checkbox.querySelector('.checkbox_logo');
+            logo.style.display = 'none';
+            checkbox.style.background = '#fff';
+            checkbox.classList.remove('active');
+        });
+        
+        updateBrandClearButton();
+        updateFilterPageClearButton();
+        
+        applyGlobalFilters();
+    });
+
+    document.querySelector('.filter_page_clear').addEventListener('click', () => {
+        isSyncing = true;
+        
+        filterState.minPrice = 0;
+        filterState.maxPrice = 10000;
+        filterState.selectedBrands = [];
+        filterState.selectedSizes = [];
+        filterState.selectedConnectivity = [];
+        
+        const pricePageLeft = document.querySelector('#pricePage .price_left_thumb');
+        const pricePageRight = document.querySelector('#pricePage .price_right_thumb');
+        const filterPageLeft = document.querySelector('#filterPage .price_left_thumb');
+        const filterPageRight = document.querySelector('#filterPage .price_right_thumb');
+        
+        pricePageLeft.value = 0;
+        pricePageRight.value = 10000;
+        filterPageLeft.value = 0;
+        filterPageRight.value = 10000;
+        
+        updateRangeVisuals('#pricePage');
+        updateRangeVisuals('#filterPage');
+        
+        document.querySelectorAll('#brandPage .brand_checkbox').forEach((checkbox) => {
+            const logo = checkbox.querySelector('.checkbox_logo');
+            logo.style.display = 'none';
+            checkbox.style.background = '#fff';
+            checkbox.classList.remove('active');
+        });
+        
+        document.querySelectorAll('#filterPage .brand_content_ul .brand_checkbox').forEach((checkbox) => {
+            const logo = checkbox.querySelector('.checkbox_logo');
+            logo.style.display = 'none';
+            checkbox.style.background = '#fff';
+            checkbox.classList.remove('active');
+        });
+        
+        updatePriceClearButton('#pricePage');
+        updatePriceClearButton('#filterPage');
+        updateBrandClearButton();
+        updateFilterPageClearButton();
+        
+        isSyncing = false;
+        
+        applyGlobalFilters();
+    });
+
+    document.querySelectorAll('.see_product_text').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            mainPage.style.display = 'block';
+            pricePage.style.display = 'none';
+            brandPage.style.display = 'none';
+            filterPage.style.display = 'none';
+        });
+    });                
 })
-
