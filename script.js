@@ -232,139 +232,139 @@ document.addEventListener('DOMContentLoaded', ()=>{
         product_container.appendChild(productLi)
     })
                
-    const filterClearBtn = document.querySelector('.filter_page_clear');
-    filterClearBtn.style.display = 'none';
+    const filterClearBtn = document.querySelector('.filter_page_clear')
+    filterClearBtn.style.display = 'none'
 
-    let defaultPrice = { min: 0, max: 10000 };
-    let defaultStock = "Any";
+    let defaultPrice = { min: 0, max: 10000 }
+    let defaultStock = "Any"
 
     function checkAnyActiveFilter() {
-    const anyCheckboxActive = document.querySelectorAll('#filterPage .brand_checkbox.active').length > 0;
-    const stockActive = document.querySelector('#filterPage .stock_radio.active');
-    const leftThumb = document.querySelector('#filterPage .price_left_thumb');
-    const rightThumb = document.querySelector('#filterPage .price_right_thumb');
+    const anyCheckboxActive = document.querySelectorAll('#filterPage .brand_checkbox.active').length > 0
+    const stockActive = document.querySelector('#filterPage .stock_radio.active')
+    const leftThumb = document.querySelector('#filterPage .price_left_thumb')
+    const rightThumb = document.querySelector('#filterPage .price_right_thumb')
 
     const priceChanged =
         parseInt(leftThumb.value) !== defaultPrice.min ||
-        parseInt(rightThumb.value) !== defaultPrice.max;
+        parseInt(rightThumb.value) !== defaultPrice.max
 
-    const stockChanged = stockActive && stockActive.nextElementSibling.textContent !== defaultStock;
+    const stockChanged = stockActive && stockActive.nextElementSibling.textContent !== defaultStock
 
     filterClearBtn.style.display =
-        anyCheckboxActive || priceChanged || stockChanged ? 'block' : 'none';
+        anyCheckboxActive || priceChanged || stockChanged ? 'block' : 'none'
     }
 
     const allFilterCheckboxes = document.querySelectorAll(
     '#filterPage .brand_checkbox'
-    );
+    )
 
     allFilterCheckboxes.forEach((box) => {
     box.addEventListener('click', () => {
-        setTimeout(checkAnyActiveFilter, 100); 
-    });
-    });
+        setTimeout(checkAnyActiveFilter, 100)
+    })
+    })
 
 
-    const filterLeft = document.querySelector('#filterPage .price_left_thumb');
-    const filterRight = document.querySelector('#filterPage .price_right_thumb');
+    const filterLeft = document.querySelector('#filterPage .price_left_thumb')
+    const filterRight = document.querySelector('#filterPage .price_right_thumb')
 
-    filterLeft.addEventListener('input', checkAnyActiveFilter);
-    filterRight.addEventListener('input', checkAnyActiveFilter);
+    filterLeft.addEventListener('input', checkAnyActiveFilter)
+    filterRight.addEventListener('input', checkAnyActiveFilter)
 
     document.querySelectorAll('#filterPage .stock_li').forEach((item) => {
     item.addEventListener('click', () => {
-        setTimeout(checkAnyActiveFilter, 100);
-    });
-    });
+        setTimeout(checkAnyActiveFilter, 100)
+    })
+    })
 
     filterClearBtn.addEventListener('click', () => {
 
     document.querySelectorAll('#filterPage .brand_checkbox').forEach((checkbox) => {
-        const logo = checkbox.querySelector('.checkbox_logo');
-        logo.style.display = 'none';
-        checkbox.style.background = '#fff';
-        checkbox.classList.remove('active');
-    });
+        const logo = checkbox.querySelector('.checkbox_logo')
+        logo.style.display = 'none'
+        checkbox.style.background = '#fff'
+        checkbox.classList.remove('active')
+    })
 
-    filterLeft.value = defaultPrice.min;
-    filterRight.value = defaultPrice.max;
-    const updateRangeEvent = new Event('input');
-    filterLeft.dispatchEvent(updateRangeEvent);
-    filterRight.dispatchEvent(updateRangeEvent);
+    filterLeft.value = defaultPrice.min
+    filterRight.value = defaultPrice.max
+    const updateRangeEvent = new Event('input')
+    filterLeft.dispatchEvent(updateRangeEvent)
+    filterRight.dispatchEvent(updateRangeEvent)
 
     document.querySelectorAll('#filterPage .stock_radio').forEach((radio) => {
-        radio.classList.remove('active');
-    });
-    const firstStock = document.querySelector('#filterPage .stock_li:first-child .stock_radio');
-    firstStock.classList.add('active');
+        radio.classList.remove('active')
+    })
+    const firstStock = document.querySelector('#filterPage .stock_li:first-child .stock_radio')
+    firstStock.classList.add('active')
 
-    filterClearBtn.style.display = 'none';
-    });
+    filterClearBtn.style.display = 'none'
+    })
 
 
     function setupPriceRange(pageSelector) {
-    const page = document.querySelector(pageSelector);
-    const leftThumb = page.querySelector('.price_left_thumb');
-    const rightThumb = page.querySelector('.price_right_thumb');
-    const rangeLine = page.querySelector('.price_outside_line');
-    const minOutput = page.querySelector('.price_min');
-    const maxOutput = page.querySelector('.price_max');
-    const blocks = page.querySelectorAll('.price_each_block');
-    const clearBtn = page.querySelector('.price_page_clear, .filter_page_clear');
+    const page = document.querySelector(pageSelector)
+    const leftThumb = page.querySelector('.price_left_thumb')
+    const rightThumb = page.querySelector('.price_right_thumb')
+    const rangeLine = page.querySelector('.price_outside_line')
+    const minOutput = page.querySelector('.price_min')
+    const maxOutput = page.querySelector('.price_max')
+    const blocks = page.querySelectorAll('.price_each_block')
+    const clearBtn = page.querySelector('.price_page_clear, .filter_page_clear')
 
 
-    const minGap = 100;
-    const sliderMax = parseInt(leftThumb.max);
-    const defaultLeft = parseInt(leftThumb.value);
-    const defaultRight = parseInt(rightThumb.value);
+    const minGap = 100
+    const sliderMax = parseInt(leftThumb.max)
+    const defaultLeft = parseInt(leftThumb.value)
+    const defaultRight = parseInt(rightThumb.value)
 
-    clearBtn.style.display = 'none';
+    clearBtn.style.display = 'none'
 
     function updateRange(e) {
-        let leftVal = parseInt(leftThumb.value);
-        let rightVal = parseInt(rightThumb.value);
+        let leftVal = parseInt(leftThumb.value)
+        let rightVal = parseInt(rightThumb.value)
 
         if (rightVal - leftVal < minGap) {
         if (e && e.target === leftThumb)
-            leftVal = rightVal - minGap;
+            leftVal = rightVal - minGap
         else if (e && e.target === rightThumb)
-            rightVal = leftVal + minGap;
+            rightVal = leftVal + minGap
         }
 
-        const leftPercent = (leftVal / sliderMax) * 100;
-        const rightPercent = (rightVal / sliderMax) * 100;
+        const leftPercent = (leftVal / sliderMax) * 100
+        const rightPercent = (rightVal / sliderMax) * 100
 
-        rangeLine.style.left = `${leftPercent}%`;
-        rangeLine.style.width = `${rightPercent - leftPercent}%`;
+        rangeLine.style.left = `${leftPercent}%`
+        rangeLine.style.width = `${rightPercent - leftPercent}%`
 
-        minOutput.textContent = leftVal === 0 ? 'min' : `₹${leftVal.toLocaleString()}`;
-        maxOutput.textContent = rightVal === sliderMax ? 'max' : `₹${rightVal.toLocaleString()}`;
+        minOutput.textContent = leftVal === 0 ? 'min' : `₹${leftVal.toLocaleString()}`
+        maxOutput.textContent = rightVal === sliderMax ? 'max' : `₹${rightVal.toLocaleString()}`
 
         blocks.forEach((block, index) => {
-        const blockValue = (sliderMax / blocks.length) * index;
-        block.style.opacity = blockValue >= leftVal && blockValue <= rightVal ? 0.5 : 0.2;
-        });
+        const blockValue = (sliderMax / blocks.length) * index
+        block.style.opacity = blockValue >= leftVal && blockValue <= rightVal ? 0.5 : 0.2
+        })
 
         clearBtn.style.display =
-        leftVal !== defaultLeft || rightVal !== defaultRight ? 'block' : 'none';
+        leftVal !== defaultLeft || rightVal !== defaultRight ? 'block' : 'none'
     }
 
-    leftThumb.addEventListener('input', updateRange);
-    rightThumb.addEventListener('input', updateRange);
+    leftThumb.addEventListener('input', updateRange)
+    rightThumb.addEventListener('input', updateRange)
 
     clearBtn.addEventListener('click', () => {
-        leftThumb.value = defaultLeft;
-        rightThumb.value = defaultRight;
-        updateRange();
-        clearBtn.style.display = 'none';
-    });
+        leftThumb.value = defaultLeft
+        rightThumb.value = defaultRight
+        updateRange()
+        clearBtn.style.display = 'none'
+    })
 
-    updateRange();
+    updateRange()
     }
 
 
-    const clearBtn = document.querySelector('.brand_page_clear');
-clearBtn.style.display = 'none';
+    const clearBtn = document.querySelector('.brand_page_clear')
+clearBtn.style.display = 'none'
 
 const brandnames = [
   { id: 1, name: 'Arion' },
@@ -374,7 +374,7 @@ const brandnames = [
   { id: 5, name: 'Ducky' },
   { id: 6, name: 'Epomaker' },
   { id: 7, name: 'Hello Ganss' }
-];
+]
 
 const size = [
   { id: 1, name: '100%' },
@@ -382,7 +382,7 @@ const size = [
   { id: 3, name: '65%' },
   { id: 4, name: '75%' },
   { id: 5, name: '80%' }
-];
+]
 
 const connect =[
     {id:1, name:'wired'},
@@ -396,7 +396,7 @@ const key = [
     { id: 5, name: 'Beige Switch' },
     { id: 6, name: 'Cabbage Tofu V2' },
     { id: 7, name: 'Cherry MX Blue' },
-];
+]
 const keycaps = [
     { id: 1, name: 'ABS' },
     { id: 2, name: 'Double-shot ABS' },
@@ -405,152 +405,152 @@ const keycaps = [
     { id: 5, name: 'Not Included' },
     { id: 6, name: 'OSA' },
     { id: 7, name: 'OSA PBT' },
-];
+]
 
 function renderFilterList(containerSelector, dataArray) {
-  const container = document.querySelector(containerSelector);
-  if (!container) return;
+  const container = document.querySelector(containerSelector)
+  if (!container) return
 
-  container.innerHTML = ''; 
+  container.innerHTML = '' 
 
   dataArray.forEach((item) => {
-    const li = document.createElement('li');
-    li.classList.add('brand_content_li');
+    const li = document.createElement('li')
+    li.classList.add('brand_content_li')
     li.innerHTML = `
       <div class="brand_checkbox">
         <img src="img/checkbox.svg" alt="" class="checkbox_logo">
       </div>
       <div class="brand_name_text">${item.name}</div>
-    `;
-    container.appendChild(li);
-  });
+    `
+    container.appendChild(li)
+  })
 
-  const moreDiv = document.createElement('div');
-  moreDiv.classList.add('brand_more_text');
-  moreDiv.innerText = `more (5)`;
-  container.appendChild(moreDiv);
+  const moreDiv = document.createElement('div')
+  moreDiv.classList.add('brand_more_text')
+  moreDiv.innerText = `more (5)`
+  container.appendChild(moreDiv)
 }
 
-renderFilterList('#brandPage .brand_content_ul', brandnames);
-renderFilterList('#filterPage .brand_content_ul', brandnames);
-renderFilterList('#filterPage .size_content_ul', size);
+renderFilterList('#brandPage .brand_content_ul', brandnames)
+renderFilterList('#filterPage .brand_content_ul', brandnames)
+renderFilterList('#filterPage .size_content_ul', size)
 renderFilterList('#filterPage .connect_content_ul',connect)
 renderFilterList('#filterPage .key_content_ul',key)
 renderFilterList('#filterPage .keycaps_content_ul',keycaps)
 
 function setupCheckboxes() {
-  const checkboxes = document.querySelectorAll('.brand_checkbox');
+  const checkboxes = document.querySelectorAll('.brand_checkbox')
 
   checkboxes.forEach((checkbox) => {
-    const checkbox_logo = checkbox.querySelector('.checkbox_logo');
-    let ischecked = false;
+    const checkbox_logo = checkbox.querySelector('.checkbox_logo')
+    let ischecked = false
 
     checkbox.addEventListener('click', () => {
-      ischecked = !ischecked;
+      ischecked = !ischecked
       if (ischecked) {
-        checkbox_logo.style.display = 'block';
-        checkbox.style.background = '#000000';
-        checkbox.classList.add('active');
+        checkbox_logo.style.display = 'block'
+        checkbox.style.background = '#000000'
+        checkbox.classList.add('active')
       } else {
-        checkbox_logo.style.display = 'none';
-        checkbox.style.background = '#fff';
-        checkbox.classList.remove('active');
+        checkbox_logo.style.display = 'none'
+        checkbox.style.background = '#fff'
+        checkbox.classList.remove('active')
       }
 
-      const anyActive = document.querySelectorAll('.brand_checkbox.active').length > 0;
-      clearBtn.style.display = anyActive ? 'block' : 'none';
-    });
-  });
+      const anyActive = document.querySelectorAll('.brand_checkbox.active').length > 0
+      clearBtn.style.display = anyActive ? 'block' : 'none'
+    })
+  })
 }
 
 clearBtn.addEventListener('click', () => {
-  const checkboxes = document.querySelectorAll('.brand_checkbox');
+  const checkboxes = document.querySelectorAll('.brand_checkbox')
   checkboxes.forEach((checkbox) => {
-    const checkbox_logo = checkbox.querySelector('.checkbox_logo');
-    checkbox_logo.style.display = 'none';
-    checkbox.style.background = '#ffffff';
-    checkbox.classList.remove('active');
-  });
-  clearBtn.style.display = 'none';
-});
+    const checkbox_logo = checkbox.querySelector('.checkbox_logo')
+    checkbox_logo.style.display = 'none'
+    checkbox.style.background = '#ffffff'
+    checkbox.classList.remove('active')
+  })
+  clearBtn.style.display = 'none'
+})
 
 
-setupCheckboxes();
+setupCheckboxes()
 
     document.querySelectorAll('#filterPage .brand_checkbox').forEach((box) => {
     box.addEventListener('click', () => {
-        setTimeout(checkAnyActiveFilter, 50);
-    });
-    });
+        setTimeout(checkAnyActiveFilter, 50)
+    })
+    })
 
 
-    const mainPage = document.getElementById('mainPage');
-    const pricePage = document.getElementById('pricePage');
-    const brandPage = document.getElementById('brandPage');
-    const filterPage = document.getElementById('filterPage');
+    const mainPage = document.getElementById('mainPage')
+    const pricePage = document.getElementById('pricePage')
+    const brandPage = document.getElementById('brandPage')
+    const filterPage = document.getElementById('filterPage')
 
-    const priceFilter = document.getElementById('priceFilter');
-    const brands = document.getElementById('priceBrand');
-    const filterBtn = document.getElementById('filterBtn');
-    const backBtn = document.getElementById('backBtn');
-    const backBtnBrand = document.getElementById('backBtnbrand');
-    const backBtnFilter = document.getElementById('backBtnfilter');
+    const priceFilter = document.getElementById('priceFilter')
+    const brands = document.getElementById('priceBrand')
+    const filterBtn = document.getElementById('filterBtn')
+    const backBtn = document.getElementById('backBtn')
+    const backBtnBrand = document.getElementById('backBtnbrand')
+    const backBtnFilter = document.getElementById('backBtnfilter')
     const header=document.querySelector('.meckey_header')
 
     priceFilter.addEventListener('click', () => {
-    mainPage.style.display = 'none';
-    pricePage.style.display = 'flex';
+    mainPage.style.display = 'none'
+    pricePage.style.display = 'flex'
     header.style.display='none'
-    });
+    })
     backBtn.addEventListener('click', () => {
-    pricePage.style.display = 'none';
-    mainPage.style.display = 'block';
+    pricePage.style.display = 'none'
+    mainPage.style.display = 'block'
     header.style.display='block'
-    });
+    })
 
     brands.addEventListener('click', () => {
-    mainPage.style.display = 'none';
-    brandPage.style.display = 'flex';
+    mainPage.style.display = 'none'
+    brandPage.style.display = 'flex'
     header.style.display='none'
-    });
+    })
     backBtnBrand.addEventListener('click', () => {
-    mainPage.style.display = 'block';
-    brandPage.style.display = 'none';
+    mainPage.style.display = 'block'
+    brandPage.style.display = 'none'
     header.style.display='block'
-    });
+    })
 
     filterBtn.addEventListener('click', () => {
-    mainPage.style.display = 'none';
-    filterPage.style.display = 'flex';
+    mainPage.style.display = 'none'
+    filterPage.style.display = 'flex'
     header.style.display='none'
-    });
+    })
     backBtnFilter.addEventListener('click', () => {
-    mainPage.style.display = 'block';
-    filterPage.style.display = 'none';
+    mainPage.style.display = 'block'
+    filterPage.style.display = 'none'
     header.style.display='block'
-    });
+    })
 
 
-    setupPriceRange('#pricePage');
-    setupPriceRange('#filterPage');
+    setupPriceRange('#pricePage')
+    setupPriceRange('#filterPage')
 
-   const stockItems = document.querySelectorAll('.stock_li');
+   const stockItems = document.querySelectorAll('.stock_li')
 
     if (stockItems.length > 0) {
-    const firstRadio = stockItems[0].querySelector('.stock_radio');
-    if (firstRadio) firstRadio.classList.add('active');
+    const firstRadio = stockItems[0].querySelector('.stock_radio')
+    if (firstRadio) firstRadio.classList.add('active')
     }
 
     stockItems.forEach((item) => {
     item.addEventListener('click', () => {
         stockItems.forEach((el) => {
-        el.querySelector('.stock_radio').classList.remove('active');
-        });
+        el.querySelector('.stock_radio').classList.remove('active')
+        })
 
-        const radio = item.querySelector('.stock_radio');
-        radio.classList.add('active');
-    });
-    });
+        const radio = item.querySelector('.stock_radio')
+        radio.classList.add('active')
+    })
+    })
                 
     const filterState = {
         minPrice: 0,
@@ -558,16 +558,16 @@ setupCheckboxes();
         selectedBrands: [],
         selectedSizes: [],
         selectedConnectivity: []
-    };
+    }
 
-    let isSyncing = false;
+    let isSyncing = false
 
     function renderProducts(productsToRender) {
-        product_container.innerHTML = ''; 
+        product_container.innerHTML = '' 
         
         productsToRender.forEach((product) => {
-            const productLi = document.createElement('li');
-            productLi.classList.add('meckey_product_list');
+            const productLi = document.createElement('li')
+            productLi.classList.add('meckey_product_list')
             productLi.innerHTML = `
             <div class="meckey_product_div">
                 <div class="meckey_product_img">
@@ -587,441 +587,441 @@ setupCheckboxes();
                     </span>
                 </div>
             </div>
-            `;
-            product_container.appendChild(productLi);
-        });
+            `
+            product_container.appendChild(productLi)
+        })
         
-        const showingResult = document.querySelector('.meckey_showing_result');
-        showingResult.textContent = `Showing 1–${productsToRender.length} of ${productsToRender.length} results`;
+        const showingResult = document.querySelector('.meckey_showing_result')
+        showingResult.textContent = `Showing 1–${productsToRender.length} of ${productsToRender.length} results`
     }
 
     function priceToNumber(priceString) {
-        return parseInt(priceString.replace('₹', '').replace(/,/g, '').replace('.00', ''));
+        return parseInt(priceString.replace('₹', '').replace(/,/g, '').replace('.00', ''))
     }
 
     function getSelectedBrands(pageSelector) {
-        const page = document.querySelector(pageSelector);
-        const activeCheckboxes = page.querySelectorAll('.brand_content_ul .brand_checkbox.active');
-        const selectedBrands = [];
+        const page = document.querySelector(pageSelector)
+        const activeCheckboxes = page.querySelectorAll('.brand_content_ul .brand_checkbox.active')
+        const selectedBrands = []
         
         activeCheckboxes.forEach((checkbox) => {
-            const brandName = checkbox.nextElementSibling.textContent;
-            selectedBrands.push(brandName.toLowerCase());
-        });
+            const brandName = checkbox.nextElementSibling.textContent
+            selectedBrands.push(brandName.toLowerCase())
+        })
         
-        return selectedBrands;
+        return selectedBrands
     }
 
     function getSelectedSizes(pageSelector) {
-        const page = document.querySelector(pageSelector);
-        const activeCheckboxes = page.querySelectorAll('.size_content_ul .brand_checkbox.active');
-        const selectedSizes = [];
+        const page = document.querySelector(pageSelector)
+        const activeCheckboxes = page.querySelectorAll('.size_content_ul .brand_checkbox.active')
+        const selectedSizes = []
         
         activeCheckboxes.forEach((checkbox) => {
-            const sizeName = checkbox.nextElementSibling.textContent;
-            const sizeValue = parseInt(sizeName.replace('%', ''));
-            selectedSizes.push(sizeValue);
-        });
+            const sizeName = checkbox.nextElementSibling.textContent
+            const sizeValue = parseInt(sizeName.replace('%', ''))
+            selectedSizes.push(sizeValue)
+        })
         
-        return selectedSizes;
+        return selectedSizes
     }
 
     function getSelectedConnectivity(pageSelector) {
-        const page = document.querySelector(pageSelector);
-        const activeCheckboxes = page.querySelectorAll('.connect_content_ul .brand_checkbox.active');
-        const selectedConnectivity = [];
+        const page = document.querySelector(pageSelector)
+        const activeCheckboxes = page.querySelectorAll('.connect_content_ul .brand_checkbox.active')
+        const selectedConnectivity = []
         
         activeCheckboxes.forEach((checkbox) => {
-            const connectName = checkbox.nextElementSibling.textContent;
-            selectedConnectivity.push(connectName.toLowerCase());
-        });
+            const connectName = checkbox.nextElementSibling.textContent
+            selectedConnectivity.push(connectName.toLowerCase())
+        })
         
-        return selectedConnectivity;
+        return selectedConnectivity
     }
 
     function filterProductsWithState() {
         return products.filter((product) => {
 
-            const productPrice = priceToNumber(product.price);
-            const priceMatch = productPrice >= filterState.minPrice && productPrice <= filterState.maxPrice;
+            const productPrice = priceToNumber(product.price)
+            const priceMatch = productPrice >= filterState.minPrice && productPrice <= filterState.maxPrice
             
-            let brandMatch = true;
+            let brandMatch = true
             if (filterState.selectedBrands.length > 0) {
-                const productName = product.name.toLowerCase();
-                brandMatch = filterState.selectedBrands.some(brand => productName.includes(brand));
+                const productName = product.name.toLowerCase()
+                brandMatch = filterState.selectedBrands.some(brand => productName.includes(brand))
             }
             
-            let sizeMatch = true;
+            let sizeMatch = true
             if (filterState.selectedSizes.length > 0) {
-                sizeMatch = filterState.selectedSizes.includes(product.size);
+                sizeMatch = filterState.selectedSizes.includes(product.size)
             }
             
-            let connectivityMatch = true;
+            let connectivityMatch = true
             if (filterState.selectedConnectivity.length > 0) {
-                connectivityMatch = filterState.selectedConnectivity.includes(product.connectivity.toLowerCase());
+                connectivityMatch = filterState.selectedConnectivity.includes(product.connectivity.toLowerCase())
             }
             
-            return priceMatch && brandMatch && sizeMatch && connectivityMatch;
-        });
+            return priceMatch && brandMatch && sizeMatch && connectivityMatch
+        })
     }
 
     function applyGlobalFilters() {
-        const filteredProducts = filterProductsWithState();
-        renderProducts(filteredProducts);
+        const filteredProducts = filterProductsWithState()
+        renderProducts(filteredProducts)
     }
 
     function updateRangeVisuals(pageSelector) {
-        const page = document.querySelector(pageSelector);
-        const leftThumb = page.querySelector('.price_left_thumb');
-        const rightThumb = page.querySelector('.price_right_thumb');
-        const rangeLine = page.querySelector('.price_outside_line');
-        const minOutput = page.querySelector('.price_min');
-        const maxOutput = page.querySelector('.price_max');
-        const blocks = page.querySelectorAll('.price_each_block');
+        const page = document.querySelector(pageSelector)
+        const leftThumb = page.querySelector('.price_left_thumb')
+        const rightThumb = page.querySelector('.price_right_thumb')
+        const rangeLine = page.querySelector('.price_outside_line')
+        const minOutput = page.querySelector('.price_min')
+        const maxOutput = page.querySelector('.price_max')
+        const blocks = page.querySelectorAll('.price_each_block')
         
-        const sliderMax = parseInt(leftThumb.max);
-        const leftVal = parseInt(leftThumb.value);
-        const rightVal = parseInt(rightThumb.value);
+        const sliderMax = parseInt(leftThumb.max)
+        const leftVal = parseInt(leftThumb.value)
+        const rightVal = parseInt(rightThumb.value)
         
-        const leftPercent = (leftVal / sliderMax) * 100;
-        const rightPercent = (rightVal / sliderMax) * 100;
+        const leftPercent = (leftVal / sliderMax) * 100
+        const rightPercent = (rightVal / sliderMax) * 100
         
-        rangeLine.style.left = `${leftPercent}%`;
-        rangeLine.style.width = `${rightPercent - leftPercent}%`;
+        rangeLine.style.left = `${leftPercent}%`
+        rangeLine.style.width = `${rightPercent - leftPercent}%`
         
-        minOutput.textContent = leftVal === 0 ? 'min' : `₹${leftVal.toLocaleString()}`;
-        maxOutput.textContent = rightVal === sliderMax ? 'max' : `₹${rightVal.toLocaleString()}`;
+        minOutput.textContent = leftVal === 0 ? 'min' : `₹${leftVal.toLocaleString()}`
+        maxOutput.textContent = rightVal === sliderMax ? 'max' : `₹${rightVal.toLocaleString()}`
         
         blocks.forEach((block, index) => {
-            const blockValue = (sliderMax / blocks.length) * index;
-            block.style.opacity = blockValue >= leftVal && blockValue <= rightVal ? 0.5 : 0.2;
-        });
+            const blockValue = (sliderMax / blocks.length) * index
+            block.style.opacity = blockValue >= leftVal && blockValue <= rightVal ? 0.5 : 0.2
+        })
     }
 
     function updatePriceClearButton(pageSelector) {
-        const page = document.querySelector(pageSelector);
-        const clearBtn = page.querySelector('.price_page_clear');
+        const page = document.querySelector(pageSelector)
+        const clearBtn = page.querySelector('.price_page_clear')
         
         if (clearBtn) {
-            const isPriceChanged = filterState.minPrice !== 0 || filterState.maxPrice !== 10000;
-            clearBtn.style.display = isPriceChanged ? 'block' : 'none';
+            const isPriceChanged = filterState.minPrice !== 0 || filterState.maxPrice !== 10000
+            clearBtn.style.display = isPriceChanged ? 'block' : 'none'
         }
     }
 
     function updateBrandClearButton() {
-        const clearBtn = document.querySelector('.brand_page_clear');
+        const clearBtn = document.querySelector('.brand_page_clear')
         
         if (clearBtn) {
-            const hasBrandsSelected = filterState.selectedBrands.length > 0;
-            clearBtn.style.display = hasBrandsSelected ? 'block' : 'none';
+            const hasBrandsSelected = filterState.selectedBrands.length > 0
+            clearBtn.style.display = hasBrandsSelected ? 'block' : 'none'
         }
     }
 
     function updateFilterPageClearButton() {
-        const filterClearBtn = document.querySelector('.filter_page_clear');
+        const filterClearBtn = document.querySelector('.filter_page_clear')
         
         if (filterClearBtn) {
-            const isPriceChanged = filterState.minPrice !== 0 || filterState.maxPrice !== 10000;
-            const hasBrandsSelected = filterState.selectedBrands.length > 0;
-            const hasSizesSelected = filterState.selectedSizes.length > 0;
-            const hasConnectivitySelected = filterState.selectedConnectivity.length > 0;
+            const isPriceChanged = filterState.minPrice !== 0 || filterState.maxPrice !== 10000
+            const hasBrandsSelected = filterState.selectedBrands.length > 0
+            const hasSizesSelected = filterState.selectedSizes.length > 0
+            const hasConnectivitySelected = filterState.selectedConnectivity.length > 0
             
-            const anyFilterActive = isPriceChanged || hasBrandsSelected || hasSizesSelected || hasConnectivitySelected;
+            const anyFilterActive = isPriceChanged || hasBrandsSelected || hasSizesSelected || hasConnectivitySelected
             
-            filterClearBtn.style.display = anyFilterActive ? 'block' : 'none';
+            filterClearBtn.style.display = anyFilterActive ? 'block' : 'none'
         }
     }
 
     function syncPriceSlidersVisually(sourcePageSelector, targetPageSelector) {
-        if (isSyncing) return; 
+        if (isSyncing) return
         
-        const sourcePage = document.querySelector(sourcePageSelector);
-        const targetPage = document.querySelector(targetPageSelector);
+        const sourcePage = document.querySelector(sourcePageSelector)
+        const targetPage = document.querySelector(targetPageSelector)
         
-        if (!sourcePage || !targetPage) return;
+        if (!sourcePage || !targetPage) return
         
-        const sourceLeft = sourcePage.querySelector('.price_left_thumb');
-        const sourceRight = sourcePage.querySelector('.price_right_thumb');
-        const targetLeft = targetPage.querySelector('.price_left_thumb');
-        const targetRight = targetPage.querySelector('.price_right_thumb');
+        const sourceLeft = sourcePage.querySelector('.price_left_thumb')
+        const sourceRight = sourcePage.querySelector('.price_right_thumb')
+        const targetLeft = targetPage.querySelector('.price_left_thumb')
+        const targetRight = targetPage.querySelector('.price_right_thumb')
         
         if (targetLeft && targetRight && sourceLeft && sourceRight) {
-            isSyncing = true;
+            isSyncing = true
             
-            targetLeft.value = sourceLeft.value;
-            targetRight.value = sourceRight.value;
-            updateRangeVisuals(targetPageSelector);
-            updatePriceClearButton(targetPageSelector);
-            isSyncing = false;
+            targetLeft.value = sourceLeft.value
+            targetRight.value = sourceRight.value
+            updateRangeVisuals(targetPageSelector)
+            updatePriceClearButton(targetPageSelector)
+            isSyncing = false
         }
     }
 
     function updatePriceFilter(minPrice, maxPrice, sourcePageSelector) {
-        if (isSyncing) return; 
+        if (isSyncing) return
         
-        filterState.minPrice = minPrice;
-        filterState.maxPrice = maxPrice;
-        updatePriceClearButton(sourcePageSelector);
-        updateFilterPageClearButton();
+        filterState.minPrice = minPrice
+        filterState.maxPrice = maxPrice
+        updatePriceClearButton(sourcePageSelector)
+        updateFilterPageClearButton()
         if (sourcePageSelector === '#pricePage') {
-            syncPriceSlidersVisually('#pricePage', '#filterPage');
+            syncPriceSlidersVisually('#pricePage', '#filterPage')
         } else if (sourcePageSelector === '#filterPage') {
-            syncPriceSlidersVisually('#filterPage', '#pricePage');
+            syncPriceSlidersVisually('#filterPage', '#pricePage')
         }
         
-        applyGlobalFilters();
+        applyGlobalFilters()
     }
 
     function updateBrandFilter(pageSelector) {
-        filterState.selectedBrands = getSelectedBrands(pageSelector);
-        updateBrandClearButton();
+        filterState.selectedBrands = getSelectedBrands(pageSelector)
+        updateBrandClearButton()
     
-        updateFilterPageClearButton();
+        updateFilterPageClearButton()
         
-        applyGlobalFilters();
+        applyGlobalFilters()
     }
 
     function updateSizeFilter(pageSelector) {
-        filterState.selectedSizes = getSelectedSizes(pageSelector);
+        filterState.selectedSizes = getSelectedSizes(pageSelector)
         
-        updateFilterPageClearButton();
+        updateFilterPageClearButton()
         
-        applyGlobalFilters();
+        applyGlobalFilters()
     }
 
     function updateConnectivityFilter(pageSelector) {
-        filterState.selectedConnectivity = getSelectedConnectivity(pageSelector);
+        filterState.selectedConnectivity = getSelectedConnectivity(pageSelector)
         
-        updateFilterPageClearButton();
+        updateFilterPageClearButton()
         
-        applyGlobalFilters();
+        applyGlobalFilters()
     }
 
     function syncCheckboxesAcrossPages(sourcePageSelector, targetPageSelector, ulClass) {
-        const sourcePage = document.querySelector(sourcePageSelector);
-        const targetPage = document.querySelector(targetPageSelector);
+        const sourcePage = document.querySelector(sourcePageSelector)
+        const targetPage = document.querySelector(targetPageSelector)
         
-        if (!sourcePage || !targetPage) return;
+        if (!sourcePage || !targetPage) return
         
-        const sourceCheckboxes = sourcePage.querySelectorAll(`${ulClass} .brand_content_li`);
-        const targetCheckboxes = targetPage.querySelectorAll(`${ulClass} .brand_content_li`);
+        const sourceCheckboxes = sourcePage.querySelectorAll(`${ulClass} .brand_content_li`)
+        const targetCheckboxes = targetPage.querySelectorAll(`${ulClass} .brand_content_li`)
         
         sourceCheckboxes.forEach((sourceLi, index) => {
-            const sourceCheckbox = sourceLi.querySelector('.brand_checkbox');
-            const targetCheckbox = targetCheckboxes[index]?.querySelector('.brand_checkbox');
+            const sourceCheckbox = sourceLi.querySelector('.brand_checkbox')
+            const targetCheckbox = targetCheckboxes[index]?.querySelector('.brand_checkbox')
             
             if (targetCheckbox) {
-                const sourceLogo = sourceCheckbox.querySelector('.checkbox_logo');
-                const targetLogo = targetCheckbox.querySelector('.checkbox_logo');
+                const sourceLogo = sourceCheckbox.querySelector('.checkbox_logo')
+                const targetLogo = targetCheckbox.querySelector('.checkbox_logo')
                 
                 if (sourceCheckbox.classList.contains('active')) {
-                    targetCheckbox.classList.add('active');
-                    targetCheckbox.style.background = '#000000';
-                    targetLogo.style.display = 'block';
+                    targetCheckbox.classList.add('active')
+                    targetCheckbox.style.background = '#000000'
+                    targetLogo.style.display = 'block'
                 } else {
-                    targetCheckbox.classList.remove('active');
-                    targetCheckbox.style.background = '#fff';
-                    targetLogo.style.display = 'none';
+                    targetCheckbox.classList.remove('active')
+                    targetCheckbox.style.background = '#fff'
+                    targetLogo.style.display = 'none'
                 }
             }
-        });
+        })
         
-        updateBrandClearButton();
-        updateFilterPageClearButton();
+        updateBrandClearButton()
+        updateFilterPageClearButton()
     }
 
     function setupPricePageFiltering() {
-        const pageSelector = '#pricePage';
-        const page = document.querySelector(pageSelector);
-        const leftThumb = page.querySelector('.price_left_thumb');
-        const rightThumb = page.querySelector('.price_right_thumb');
+        const pageSelector = '#pricePage'
+        const page = document.querySelector(pageSelector)
+        const leftThumb = page.querySelector('.price_left_thumb')
+        const rightThumb = page.querySelector('.price_right_thumb')
         
         leftThumb.addEventListener('input', () => {
-            if (isSyncing) return;
-            const minPrice = parseInt(leftThumb.value);
-            const maxPrice = parseInt(rightThumb.value);
-            updatePriceFilter(minPrice, maxPrice, pageSelector);
-        });
+            if (isSyncing) return
+            const minPrice = parseInt(leftThumb.value)
+            const maxPrice = parseInt(rightThumb.value)
+            updatePriceFilter(minPrice, maxPrice, pageSelector)
+        })
         
         rightThumb.addEventListener('input', () => {
-            if (isSyncing) return;
-            const minPrice = parseInt(leftThumb.value);
-            const maxPrice = parseInt(rightThumb.value);
-            updatePriceFilter(minPrice, maxPrice, pageSelector);
-        });
+            if (isSyncing) return
+            const minPrice = parseInt(leftThumb.value)
+            const maxPrice = parseInt(rightThumb.value)
+            updatePriceFilter(minPrice, maxPrice, pageSelector)
+        })
     }
 
     function setupFilterPageFiltering() {
-        const pageSelector = '#filterPage';
-        const page = document.querySelector(pageSelector);
-        const leftThumb = page.querySelector('.price_left_thumb');
-        const rightThumb = page.querySelector('.price_right_thumb');
+        const pageSelector = '#filterPage'
+        const page = document.querySelector(pageSelector)
+        const leftThumb = page.querySelector('.price_left_thumb')
+        const rightThumb = page.querySelector('.price_right_thumb')
         
         leftThumb.addEventListener('input', () => {
-            if (isSyncing) return;
-            const minPrice = parseInt(leftThumb.value);
-            const maxPrice = parseInt(rightThumb.value);
-            updatePriceFilter(minPrice, maxPrice, pageSelector);
-        });
+            if (isSyncing) return
+            const minPrice = parseInt(leftThumb.value)
+            const maxPrice = parseInt(rightThumb.value)
+            updatePriceFilter(minPrice, maxPrice, pageSelector)
+        })
         
         rightThumb.addEventListener('input', () => {
-            if (isSyncing) return;
-            const minPrice = parseInt(leftThumb.value);
-            const maxPrice = parseInt(rightThumb.value);
-            updatePriceFilter(minPrice, maxPrice, pageSelector);
-        });
+            if (isSyncing) return
+            const minPrice = parseInt(leftThumb.value)
+            const maxPrice = parseInt(rightThumb.value)
+            updatePriceFilter(minPrice, maxPrice, pageSelector)
+        })
         
         setTimeout(() => {
-            const brandCheckboxes = page.querySelectorAll('.brand_content_ul .brand_checkbox');
+            const brandCheckboxes = page.querySelectorAll('.brand_content_ul .brand_checkbox')
             brandCheckboxes.forEach((checkbox) => {
                 checkbox.addEventListener('click', () => {
                     setTimeout(() => {
-                        updateBrandFilter(pageSelector);
-                        syncCheckboxesAcrossPages('#filterPage', '#brandPage', '.brand_content_ul');
-                    }, 50);
-                });
-            });
+                        updateBrandFilter(pageSelector)
+                        syncCheckboxesAcrossPages('#filterPage', '#brandPage', '.brand_content_ul')
+                    }, 50)
+                })
+            })
             
-            const sizeCheckboxes = page.querySelectorAll('.size_content_ul .brand_checkbox');
+            const sizeCheckboxes = page.querySelectorAll('.size_content_ul .brand_checkbox')
             sizeCheckboxes.forEach((checkbox) => {
                 checkbox.addEventListener('click', () => {
-                    setTimeout(() => updateSizeFilter(pageSelector), 50);
-                });
-            });
+                    setTimeout(() => updateSizeFilter(pageSelector), 50)
+                })
+            })
             
-            const connectCheckboxes = page.querySelectorAll('.connect_content_ul .brand_checkbox');
+            const connectCheckboxes = page.querySelectorAll('.connect_content_ul .brand_checkbox')
             connectCheckboxes.forEach((checkbox) => {
                 checkbox.addEventListener('click', () => {
-                    setTimeout(() => updateConnectivityFilter(pageSelector), 50);
-                });
-            });
-        }, 100);
+                    setTimeout(() => updateConnectivityFilter(pageSelector), 50)
+                })
+            })
+        }, 100)
     }
 
     function setupBrandPageFiltering() {
-        const pageSelector = '#brandPage';
+        const pageSelector = '#brandPage'
         
         setTimeout(() => {
-            const brandCheckboxes = document.querySelectorAll('#brandPage .brand_checkbox');
+            const brandCheckboxes = document.querySelectorAll('#brandPage .brand_checkbox')
             brandCheckboxes.forEach((checkbox) => {
                 checkbox.addEventListener('click', () => {
                     setTimeout(() => {
-                        updateBrandFilter(pageSelector);
-                        syncCheckboxesAcrossPages('#brandPage', '#filterPage', '.brand_content_ul');
-                    }, 50);
-                });
-            });
-        }, 100);
+                        updateBrandFilter(pageSelector)
+                        syncCheckboxesAcrossPages('#brandPage', '#filterPage', '.brand_content_ul')
+                    }, 50)
+                })
+            })
+        }, 100)
     }
 
-    setupPricePageFiltering();
-    setupFilterPageFiltering();
-    setupBrandPageFiltering();
+    setupPricePageFiltering()
+    setupFilterPageFiltering()
+    setupBrandPageFiltering()
 
     document.querySelector('#pricePage .price_page_clear').addEventListener('click', () => {
-        isSyncing = true;
+        isSyncing = true
         
-        filterState.minPrice = 0;
-        filterState.maxPrice = 10000;
+        filterState.minPrice = 0
+        filterState.maxPrice = 10000
         
-        const pricePageLeft = document.querySelector('#pricePage .price_left_thumb');
-        const pricePageRight = document.querySelector('#pricePage .price_right_thumb');
-        const filterPageLeft = document.querySelector('#filterPage .price_left_thumb');
-        const filterPageRight = document.querySelector('#filterPage .price_right_thumb');
+        const pricePageLeft = document.querySelector('#pricePage .price_left_thumb')
+        const pricePageRight = document.querySelector('#pricePage .price_right_thumb')
+        const filterPageLeft = document.querySelector('#filterPage .price_left_thumb')
+        const filterPageRight = document.querySelector('#filterPage .price_right_thumb')
         
-        pricePageLeft.value = 0;
-        pricePageRight.value = 10000;
-        filterPageLeft.value = 0;
-        filterPageRight.value = 10000;
+        pricePageLeft.value = 0
+        pricePageRight.value = 10000
+        filterPageLeft.value = 0
+        filterPageRight.value = 10000
         
-        updateRangeVisuals('#pricePage');
-        updateRangeVisuals('#filterPage');
+        updateRangeVisuals('#pricePage')
+        updateRangeVisuals('#filterPage')
         
-        updatePriceClearButton('#pricePage');
-        updatePriceClearButton('#filterPage');
-        updateFilterPageClearButton();
+        updatePriceClearButton('#pricePage')
+        updatePriceClearButton('#filterPage')
+        updateFilterPageClearButton()
         
-        isSyncing = false;
+        isSyncing = false
         
-        applyGlobalFilters();
-    });
+        applyGlobalFilters()
+    })
 
     document.querySelector('#brandPage .brand_page_clear').addEventListener('click', () => {
-        filterState.selectedBrands = [];
+        filterState.selectedBrands = []
         
         document.querySelectorAll('#brandPage .brand_content_ul .brand_checkbox').forEach((checkbox) => {
-            const logo = checkbox.querySelector('.checkbox_logo');
-            logo.style.display = 'none';
-            checkbox.style.background = '#fff';
-            checkbox.classList.remove('active');
-        });
+            const logo = checkbox.querySelector('.checkbox_logo')
+            logo.style.display = 'none'
+            checkbox.style.background = '#fff'
+            checkbox.classList.remove('active')
+        })
         
         document.querySelectorAll('#filterPage .brand_content_ul .brand_checkbox').forEach((checkbox) => {
-            const logo = checkbox.querySelector('.checkbox_logo');
-            logo.style.display = 'none';
-            checkbox.style.background = '#fff';
-            checkbox.classList.remove('active');
-        });
+            const logo = checkbox.querySelector('.checkbox_logo')
+            logo.style.display = 'none'
+            checkbox.style.background = '#fff'
+            checkbox.classList.remove('active')
+        })
         
-        updateBrandClearButton();
-        updateFilterPageClearButton();
+        updateBrandClearButton()
+        updateFilterPageClearButton()
         
-        applyGlobalFilters();
-    });
+        applyGlobalFilters()
+    })
 
     document.querySelector('.filter_page_clear').addEventListener('click', () => {
-        isSyncing = true;
+        isSyncing = true
         
-        filterState.minPrice = 0;
-        filterState.maxPrice = 10000;
-        filterState.selectedBrands = [];
-        filterState.selectedSizes = [];
-        filterState.selectedConnectivity = [];
+        filterState.minPrice = 0
+        filterState.maxPrice = 10000
+        filterState.selectedBrands = []
+        filterState.selectedSizes = []
+        filterState.selectedConnectivity = []
         
-        const pricePageLeft = document.querySelector('#pricePage .price_left_thumb');
-        const pricePageRight = document.querySelector('#pricePage .price_right_thumb');
-        const filterPageLeft = document.querySelector('#filterPage .price_left_thumb');
-        const filterPageRight = document.querySelector('#filterPage .price_right_thumb');
+        const pricePageLeft = document.querySelector('#pricePage .price_left_thumb')
+        const pricePageRight = document.querySelector('#pricePage .price_right_thumb')
+        const filterPageLeft = document.querySelector('#filterPage .price_left_thumb')
+        const filterPageRight = document.querySelector('#filterPage .price_right_thumb')
         
-        pricePageLeft.value = 0;
-        pricePageRight.value = 10000;
-        filterPageLeft.value = 0;
-        filterPageRight.value = 10000;
+        pricePageLeft.value = 0
+        pricePageRight.value = 10000
+        filterPageLeft.value = 0
+        filterPageRight.value = 10000
         
-        updateRangeVisuals('#pricePage');
-        updateRangeVisuals('#filterPage');
+        updateRangeVisuals('#pricePage')
+        updateRangeVisuals('#filterPage')
         
         document.querySelectorAll('#brandPage .brand_checkbox').forEach((checkbox) => {
-            const logo = checkbox.querySelector('.checkbox_logo');
-            logo.style.display = 'none';
-            checkbox.style.background = '#fff';
-            checkbox.classList.remove('active');
-        });
+            const logo = checkbox.querySelector('.checkbox_logo')
+            logo.style.display = 'none'
+            checkbox.style.background = '#fff'
+            checkbox.classList.remove('active')
+        })
         
         document.querySelectorAll('#filterPage .brand_content_ul .brand_checkbox').forEach((checkbox) => {
-            const logo = checkbox.querySelector('.checkbox_logo');
-            logo.style.display = 'none';
-            checkbox.style.background = '#fff';
-            checkbox.classList.remove('active');
-        });
+            const logo = checkbox.querySelector('.checkbox_logo')
+            logo.style.display = 'none'
+            checkbox.style.background = '#fff'
+            checkbox.classList.remove('active')
+        })
         
-        updatePriceClearButton('#pricePage');
-        updatePriceClearButton('#filterPage');
-        updateBrandClearButton();
-        updateFilterPageClearButton();
+        updatePriceClearButton('#pricePage')
+        updatePriceClearButton('#filterPage')
+        updateBrandClearButton()
+        updateFilterPageClearButton()
         
-        isSyncing = false;
+        isSyncing = false
         
-        applyGlobalFilters();
-    });
+        applyGlobalFilters()
+    })
 
     document.querySelectorAll('.see_product_text').forEach((btn) => {
         btn.addEventListener('click', () => {
-            mainPage.style.display = 'block';
+            mainPage.style.display = 'block'
             header.style.display='block'
-            pricePage.style.display = 'none';
-            brandPage.style.display = 'none';
-            filterPage.style.display = 'none';
-        });
-    });          
+            pricePage.style.display = 'none'
+            brandPage.style.display = 'none'
+            filterPage.style.display = 'none'
+        })
+    })        
 })
